@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Data.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Data.orm.Fakes.ShimGDMContext">
+            <summary>Shim type of Data.orm.GDMContext</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.#ctor(Data.orm.GDMContext)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.Bind(System.Data.Entity.Infrastructure.IObjectContextAdapter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimGDMContext.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimGDMContext.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimGDMContext.Constructor">
+            <summary>Sets the shim of GDMContext.GDMContext()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimGDMContext.OnModelCreatingDbModelBuilder">
+            <summary>Sets the shim of GDMContext.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="T:Data.orm.Fakes.ShimGDMContext.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimGDMContext.AllInstances.OnModelCreatingDbModelBuilder">
+            <summary>Sets the shim of GDMContext.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="T:Data.orm.Fakes.ShimUnitOfWork">
+            <summary>Shim type of Data.orm.UnitOfWork</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimUnitOfWork.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimUnitOfWork.#ctor(Data.orm.UnitOfWork)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimUnitOfWork.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimUnitOfWork.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.ShimUnitOfWork.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.ArticleRepositoryGet">
+            <summary>Sets the shim of UnitOfWork.get_ArticleRepository()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.Constructor">
+            <summary>Sets the shim of UnitOfWork.UnitOfWork()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.Dispose">
+            <summary>Sets the shim of UnitOfWork.Dispose()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.DisposeBoolean">
+            <summary>Sets the shim of UnitOfWork.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.Save">
+            <summary>Sets the shim of UnitOfWork.Save()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.UserRepositoryGet">
+            <summary>Sets the shim of UnitOfWork.get_UserRepository()</summary>
+        </member>
+        <member name="T:Data.orm.Fakes.ShimUnitOfWork.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.AllInstances.ArticleRepositoryGet">
+            <summary>Sets the shim of UnitOfWork.get_ArticleRepository()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.AllInstances.Dispose">
+            <summary>Sets the shim of UnitOfWork.Dispose()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of UnitOfWork.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.AllInstances.Save">
+            <summary>Sets the shim of UnitOfWork.Save()</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.ShimUnitOfWork.AllInstances.UserRepositoryGet">
+            <summary>Sets the shim of UnitOfWork.get_UserRepository()</summary>
+        </member>
+        <member name="T:Data.orm.Fakes.StubGDMContext">
+            <summary>Stub type of Data.orm.GDMContext</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.Dispose(System.Boolean)">
+            <summary>Sets the stub of DbContext.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.DisposeBoolean">
+            <summary>Sets the stub of DbContext.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.Equals(System.Object)">
+            <summary>Sets the stub of DbContext.Equals(Object obj)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.EqualsObject">
+            <summary>Sets the stub of DbContext.Equals(Object obj)</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.GetHashCode">
+            <summary>Sets the stub of DbContext.GetHashCode()</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.GetHashCode01">
+            <summary>Sets the stub of DbContext.GetHashCode()</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.InitializeStub">
+            <summary>Initializes a new instance of type StubGDMContext</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>Sets the stub of GDMContext.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.OnModelCreatingDbModelBuilder">
+            <summary>Sets the stub of GDMContext.OnModelCreating(DbModelBuilder modelBuilder)</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.SaveChanges">
+            <summary>Sets the stub of DbContext.SaveChanges()</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.SaveChanges01">
+            <summary>Sets the stub of DbContext.SaveChanges()</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.ShouldValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry)">
+            <summary>Sets the stub of DbContext.ShouldValidateEntity(DbEntityEntry entityEntry)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.ShouldValidateEntityDbEntityEntry">
+            <summary>Sets the stub of DbContext.ShouldValidateEntity(DbEntityEntry entityEntry)</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.ToString">
+            <summary>Sets the stub of DbContext.ToString()</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.ToString01">
+            <summary>Sets the stub of DbContext.ToString()</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubGDMContext.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry,System.Collections.Generic.IDictionary{System.Object,System.Object})">
+            <summary>Sets the stub of DbContext.ValidateEntity(DbEntityEntry entityEntry, IDictionary`2&lt;Object,Object&gt; items)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubGDMContext.ValidateEntityDbEntityEntryIDictionaryOfObjectObject">
+            <summary>Sets the stub of DbContext.ValidateEntity(DbEntityEntry entityEntry, IDictionary`2&lt;Object,Object&gt; items)</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubGDMContext.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubGDMContext.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubGDMContext.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Data.orm.Fakes.StubUnitOfWork">
+            <summary>Stub type of Data.orm.UnitOfWork</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubUnitOfWork.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubUnitOfWork.Dispose(System.Boolean)">
+            <summary>Sets the stub of UnitOfWork.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:Data.orm.Fakes.StubUnitOfWork.DisposeBoolean">
+            <summary>Sets the stub of UnitOfWork.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="M:Data.orm.Fakes.StubUnitOfWork.InitializeStub">
+            <summary>Initializes a new instance of type StubUnitOfWork</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubUnitOfWork.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubUnitOfWork.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Data.orm.Fakes.StubUnitOfWork.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Data.orm.repositories.Fakes.ShimGDMRepository`1">
+            <summary>Shim type of Data.orm.repositories.GDMRepository`1</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.ShimGDMRepository`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.ShimGDMRepository`1.#ctor(Data.orm.repositories.GDMRepository{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.ShimGDMRepository`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.ShimGDMRepository`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.ConstructorGDMContext">
+            <summary>Sets the shim of GDMRepository`1.GDMRepository`1(GDMContext context)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.DeleteObject">
+            <summary>Sets the shim of GDMRepository`1.Delete(Object id)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.DeleteT0">
+            <summary>Sets the shim of GDMRepository`1.Delete(!0 entity)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.GetByIDObject">
+            <summary>Sets the shim of GDMRepository`1.GetByID(Object id)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.GetExpressionOfFuncOfT0BooleanFuncOfIQueryableOfT0IOrderedQueryableOfT0String">
+            <summary>Sets the shim of GDMRepository`1.Get(Expression`1&lt;Func`2&lt;!0,Boolean&gt;&gt; filter, Func`2&lt;IQueryable`1&lt;!0&gt;,IOrderedQueryable`1&lt;!0&gt;&gt; orderBy, String includeProperties)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.InsertT0">
+            <summary>Sets the shim of GDMRepository`1.Insert(!0 entity)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.UpdateT0">
+            <summary>Sets the shim of GDMRepository`1.Update(!0 entity)</summary>
+        </member>
+        <member name="T:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.DeleteObject">
+            <summary>Sets the shim of GDMRepository`1.Delete(Object id)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.DeleteT0">
+            <summary>Sets the shim of GDMRepository`1.Delete(!0 entity)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.GetByIDObject">
+            <summary>Sets the shim of GDMRepository`1.GetByID(Object id)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.GetExpressionOfFuncOfT0BooleanFuncOfIQueryableOfT0IOrderedQueryableOfT0String">
+            <summary>Sets the shim of GDMRepository`1.Get(Expression`1&lt;Func`2&lt;!0,Boolean&gt;&gt; filter, Func`2&lt;IQueryable`1&lt;!0&gt;,IOrderedQueryable`1&lt;!0&gt;&gt; orderBy, String includeProperties)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.InsertT0">
+            <summary>Sets the shim of GDMRepository`1.Insert(!0 entity)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.ShimGDMRepository`1.AllInstances.UpdateT0">
+            <summary>Sets the shim of GDMRepository`1.Update(!0 entity)</summary>
+        </member>
+        <member name="T:Data.orm.repositories.Fakes.StubGDMRepository`1">
+            <summary>Stub type of Data.orm.repositories.GDMRepository`1</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.#ctor(Data.orm.GDMContext)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.Delete(System.Object)">
+            <summary>Sets the stub of GDMRepository`1.Delete(Object id)</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.Delete(`0)">
+            <summary>Sets the stub of GDMRepository`1.Delete(!0 entity)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.DeleteObject">
+            <summary>Sets the stub of GDMRepository`1.Delete(Object id)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.DeleteT0">
+            <summary>Sets the stub of GDMRepository`1.Delete(!0 entity)</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String)">
+            <summary>Sets the stub of GDMRepository`1.Get(Expression`1&lt;Func`2&lt;!0,Boolean&gt;&gt; filter, Func`2&lt;IQueryable`1&lt;!0&gt;,IOrderedQueryable`1&lt;!0&gt;&gt; orderBy, String includeProperties)</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.GetByID(System.Object)">
+            <summary>Sets the stub of GDMRepository`1.GetByID(Object id)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.GetByIDObject">
+            <summary>Sets the stub of GDMRepository`1.GetByID(Object id)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.GetExpressionOfFuncOfT0BooleanFuncOfIQueryableOfT0IOrderedQueryableOfT0String">
+            <summary>Sets the stub of GDMRepository`1.Get(Expression`1&lt;Func`2&lt;!0,Boolean&gt;&gt; filter, Func`2&lt;IQueryable`1&lt;!0&gt;,IOrderedQueryable`1&lt;!0&gt;&gt; orderBy, String includeProperties)</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.InitializeStub">
+            <summary>Initializes a new instance of type StubGDMRepository</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.Insert(`0)">
+            <summary>Sets the stub of GDMRepository`1.Insert(!0 entity)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.InsertT0">
+            <summary>Sets the stub of GDMRepository`1.Insert(!0 entity)</summary>
+        </member>
+        <member name="M:Data.orm.repositories.Fakes.StubGDMRepository`1.Update(`0)">
+            <summary>Sets the stub of GDMRepository`1.Update(!0 entity)</summary>
+        </member>
+        <member name="F:Data.orm.repositories.Fakes.StubGDMRepository`1.UpdateT0">
+            <summary>Sets the stub of GDMRepository`1.Update(!0 entity)</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.StubGDMRepository`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.StubGDMRepository`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Data.orm.repositories.Fakes.StubGDMRepository`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

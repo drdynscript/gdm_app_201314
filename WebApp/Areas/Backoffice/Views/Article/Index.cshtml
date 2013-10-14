@@ -1,0 +1,43 @@
+﻿@model ICollection<Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Backoffice/Views/Shared/_LayoutPage.cshtml";
+}
+@if (Model != null && Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Categories</th>
+                <th>Comments</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@article.Title,"Details",new {id=article.Id})</td>
+                    <td>@article.User.UserName</td>
+                    <td>
+                        @if (@article.Categories != null && @article.Categories.Count > 0)
+                        {
+                            <ul>
+                            @foreach (var category in @article.Categories)
+                            {
+                                <li>@category.Name</li>
+                            }
+                            </ul>
+                        }
+                    </td>
+                    <td>TAG</td>
+                    <td>@article.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

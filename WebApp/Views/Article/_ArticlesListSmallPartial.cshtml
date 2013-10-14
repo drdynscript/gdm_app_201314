@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Models.Article>
+
+@if (Model != null && Model.Count<Models.Article>() > 0)
+{
+    <section>
+    <h1>Nieuwsberichten</h1>
+    <ul class="article-list small">
+        @foreach (var article in Model)
+        {
+            <li>
+                <a href="~/Article/Details/@article.Id">@article.Title</a>
+            </li>
+        }
+    </ul>
+    </section>
+}
+@foreach (var item in Model) {    
+    <article class="article large">
+        <h3 class="title">@item.Title</h3>
+        <section class="meta">
+            <time pubdate="pubdate" datetime="@item.CreatedDate.ToString("yyyy-MM-dd")">@item.CreatedDate</time>
+        </section>
+        <section class="description">
+            @Html.Raw(HttpUtility.HtmlDecode(item.Description))
+        </section>
+        <figure>
+            <img src="http://lorempixel.com/g/200/200/" alt="@item.Title" />
+            <figcaption>@item.Title</figcaption>
+        </figure>
+    </article>
+}

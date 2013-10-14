@@ -1,0 +1,24 @@
+﻿@model ICollection<Models.Role>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>CreatedDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@role.Name,"Edit",new {id=role.Id})</td>
+                    <td>@role.Description</td>
+                    <td>@role.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

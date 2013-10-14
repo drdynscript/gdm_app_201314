@@ -1,0 +1,43 @@
+﻿@model App.Web.Areas.Admin.Models.LoginModel
+
+@{
+    ViewBag.Title = "Please Enter Your Information";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageLogin.cshtml";
+}
+
+<header>
+    <h3><i class="icon-coffee green"></i>@ViewBag.Title</h3>
+</header>
+<section class="login-internal">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new { @class = "form-login", id="form-signin" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-error" })
+
+        <fieldset>
+            <legend class="form-signin">Please Enter Your Information</legend>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.UserName, new { @class = "hidden"})
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "input-block-level", placeholder="Username" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Password, new { @class = "hidden" })
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.Password, new { @class = "input-block-level", placeholder="Password" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="editor-field">
+                 @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </div>
+            <p>
+                <input class="btn btn-large btn-block btn-primary" type="submit" value="Sign in" />
+            </p>
+        </fieldset>
+    }
+</section>
+

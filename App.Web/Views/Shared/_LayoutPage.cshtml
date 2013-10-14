@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_LayoutMain.cshtml";
+}
+@* RENDER EXTRA PAGE RELATED CSS AND JS *@
+@section head{
+    @RenderSection("head", required: false)
+}
+<div class="container-fluid">
+    <div class="container" id="content">
+        @RenderBody()
+    </div>
+</div>
+@* RENDER EXTRA PAGE RELATED JS *@
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

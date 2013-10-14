@@ -1,0 +1,108 @@
+﻿body
+{
+    background: url(../images/bg.jpg) repeat-y top right, url(../images/bga.png) repeat top left;
+}
+.navbar
+{
+    background:#34495e;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 4px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 4px 0 rgba(0,0,0,.1);
+    box-shadow: 0 4px 0 rgba(0,0,0,.1);
+    position: relative;
+    z-index: 2;
+    border-color: transparent;
+    margin-bottom:0;
+}
+    .navbar > li > a
+    {
+        border-bottom: 2px solid #2c3e50;
+        color: #fff;
+    }
+    .navbar-default .navbar-brand {
+        color: #fff;
+    }
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus {
+        color: #1abc9c;
+    }
+    .navbar .nav > li > a:hover, 
+    .navbar .nav > li > a:focus {
+        color: #1abc9c;
+    }
+#courtesy-navigation.nav-pills > li > a {
+    border-radius: 0;
+    padding:12px 8px;
+}
+    #courtesy-navigation.nav-pills > li > a:hover,
+    #courtesy-navigation.nav-pills > li > a:focus
+    {
+        background:#1abc9c;
+        color:#fff;
+
+    }
+.container-wrapper
+{
+    margin-right:15px;
+    margin-left:15px;
+}
+form fieldset legend
+{
+    display:none;
+}
+#sidebar
+{
+
+}
+#main-content
+{
+    padding-top:15px;
+    background: url(../images/bg.jpg) repeat top right;
+}
+#info-message
+{
+    display:none;
+}
+.dashboard-users-count
+{
+    font-size:1.4em;
+}
+.users-count
+{
+    font-size:1.4em;
+    color:#3498db;
+    margin-right:12px;
+}
+.field-validation-error
+{
+    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#fcf8e3), to(#f8efc0));
+    background-image: -webkit-linear-gradient(top, #fcf8e3, 0%, #f8efc0, 100%);
+    background-image: -moz-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
+    background-image: linear-gradient(to bottom, #fcf8e3 0%, #f8efc0 100%);
+    background-repeat: repeat-x;
+    border-color: #f5e79e;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    display:block;
+}
+.medium picture
+{
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    display:block;
+}
+.medium picture img
+{
+    width:100%;
+    min-width:100%;
+    min-height:100%;
+}

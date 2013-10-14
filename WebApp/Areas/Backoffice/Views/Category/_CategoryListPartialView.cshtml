@@ -1,0 +1,31 @@
+﻿@model ICollection<Models.Category>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Parent</th>
+                <th>CreatedDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@category.Name,"Edit",new {id=category.Id})</td>
+                    <td>@category.Description</td>
+                    <td>
+                        @if (@category.ParentCategory != null)
+                        {
+                            @category.ParentCategory.Name
+                        }
+                    </td>
+                    <td>@category.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

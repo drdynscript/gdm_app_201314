@@ -1,0 +1,44 @@
+﻿@using WebApp.Helpers;
+
+<div class="wrapper" id="header-wrapper">
+    <div class="container">
+        <header class="row-fluid">
+            <hgroup id="header-logo" class="pull-left">
+                <h1><a href="/" title="Back to the homepage">GDM</a></h1>
+                <h2>Bachelor in de Grafische en Digitale Media</h2>
+            </hgroup>
+            <div id="courtesy" class="pull-right">
+                @{Html.RenderPartial("_LoginStatePartial");}
+            </div>
+        </header>        
+    </div>
+</div>
+<div class="navbar navbar-inverse navbar-static-top" id="main-navigation">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#"></a> 
+            <div class="nav-collapse collapse">
+                <nav class="clearfix">
+                    @{Html.MvcSiteMap().Menu(false, true, true);}
+                    <ul class="nav">
+                        @Html.MenuItem("Home", "Index", "Home")
+                        @Html.MenuItem("Blog", "Index", "Article")
+                        @Html.MenuItem("Portfolio", "Portfolio", "Home")
+                        @Html.MenuItem("About", "Index", "About")
+                        @Html.MenuItem("Contact", "Contact", "About")
+                    </ul>
+                    <form class="navbar-search pull-right">
+                      <input type="text" class="search-query" placeholder="Search">
+                    </form>
+                </nav>
+                
+            </div>
+ 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model WebApp.Areas.Backoffice.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Areas/Backoffice/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="container-fluid">
+    <div id="login">
+        <header>
+            <hgroup id="header-logo">
+                <h1><a href="~=" title="Backoffice GDM">Backoffice GDM</a></h1>
+                <h2>Bachelor in de grafische en digitale media</h2>
+            </hgroup>
+        </header>
+    </div>
+</div>
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new { @class = "form-signin", id="loginform" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "alert alert-error" })
+
+    <fieldset>
+        <legend class="form-signin-heading">Please sign in</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName, new { @class = "hidden"})
+                @Html.TextBoxFor(m => m.UserName, new { @class = "input-block-level", placeholder="Username" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password, new { @class = "hidden" })
+                @Html.PasswordFor(m => m.Password, new { @class = "input-block-level", placeholder="Password" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input class="btn btn-large btn-primary" type="submit" value="Sign in" />
+    </fieldset>
+}

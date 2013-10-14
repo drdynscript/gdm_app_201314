@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+@{Html.RenderAction("AmountOfUsersPartialView", "Home");}
+@{Html.RenderAction("ArticlesInNumbersPartialView", "Home");}

@@ -1,0 +1,36 @@
+﻿@model ICollection<Models.Category>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Parent</th>
+                <th>CreatedDate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr data-id="category-@category.Id" data-name="@category.Name">
+                    <td>@Html.ActionLink(@category.Name,"CategoryEditPartialView","Category",new {id=category.Id},new {@class="edit-category-link"})</td>
+                    <td>@category.Description</td>
+                    <td>
+                        @if (@category.ParentCategory != null)
+                        {
+                            @category.ParentCategory.Name
+                        }
+                    </td>
+                    <td>@category.CreatedDate</td>
+                    <td>
+                    @Html.ActionLink("Edit", "CategoryEditPartialView", new { id= category.Id }, new {@class="edit-category-link"}) |
+                    @Html.ActionLink("Delete", "AjaxDeleteCategory", new { id = category.Id}, new {@class="delete-category-link"})
+               </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

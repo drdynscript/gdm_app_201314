@@ -1,0 +1,25 @@
+﻿@model App.Web.Areas.Admin.Models.AmountOfUsersModel
+
+<div class="row dashboard-users-count">
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.UsersCount</span>users
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.StudentsCount</span>students
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.LecturersCount</span>lecturers
+            </div>
+        </div>        
+    </section>
+</div>

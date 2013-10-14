@@ -1,0 +1,25 @@
+﻿@model App.Web.Areas.Admin.Models.ArticlesInNumbersModel
+
+<div class="row dashboard-users-count">
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.ArticlesCount</span>articles
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.CommentsOnArticlesCount</span>comments
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="users-count">@Model.AuthorsArticlesCount</span>authors
+            </div>
+        </div>        
+    </section>
+</div>

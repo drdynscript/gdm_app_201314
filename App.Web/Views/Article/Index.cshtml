@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="row-fluid">
+    <h1 class="span12">@ViewBag.Title</h1>
+</div>
+<div class="row-fluid">
+    <section class="span8">
+        @Html.Action("ArticlesListPartialView", "Article", new {amount=5});
+    </section>
+    <aside class="span4">
+    </aside>
+</div>

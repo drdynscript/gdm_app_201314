@@ -1,0 +1,8 @@
+﻿@model Models.Article
+
+<article class="article medium">
+    <h3>@Html.DisplayFor(model => model.Title)</h3>
+    <section class="description">
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
+    </section>
+</article>

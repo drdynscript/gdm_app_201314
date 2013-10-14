@@ -1,0 +1,31 @@
+﻿@model ICollection<Models.Role>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Users</th>
+                <th>CreatedDate</th>                
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr data-id="role-@role.Id" data-name="@role.Name">
+                    <td>@Html.ActionLink(@role.Name,"RoleEditPartialView","Role",new {id=role.Id},new {@class="edit-role-link"})</td>
+                    <td>@role.Description</td>
+                    <td>@role.Users.Count</td>
+                    <td>@role.CreatedDate</td>
+                    <td>
+                        @Html.ActionLink("Edit", "RoleEditPartialView", new { id= role.Id }, new {@class="edit-role-link"}) |
+                        @Html.ActionLink("Delete", "AjaxDeleteRole", new { id = role.Id}, new {@class="delete-role-link"})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

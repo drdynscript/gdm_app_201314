@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_LayoutMain.cshtml";
+}
+@* RENDER SECTION: FEATURED IF PRESENT *@
+@RenderSection("featured", required: false)
+@* RENDER SECTION: PRECONTENT IF PRESENT *@
+@RenderSection("precontent", required: false)
+<div class="container-fluid" id="content">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                @Html.MvcSiteMap().SiteMapPath()
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</div>
+@* RENDER EXTRA PAGE RELATED JS *@
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

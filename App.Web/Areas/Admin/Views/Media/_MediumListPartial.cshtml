@@ -1,0 +1,29 @@
+﻿@model ICollection<Models.Medium>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>CreatedDate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var medium in Model)
+            {
+                <tr data-id="category-@medium.Id" data-name="@medium.Title">
+                    <td>@Html.ActionLink(@medium.Title,"MediumEditPartialView","Media",new {id=medium.Id},new {@class="edit-medium-link"})</td>
+                    <td>@medium.Description</td>
+                    <td>@medium.CreatedDate</td>
+                    <td>
+                    @Html.ActionLink("Edit", "CategoryEditPartialView", new { id= medium.Id }, new {@class="edit-medium-link"}) |
+                    @Html.ActionLink("Delete", "AjaxDeleteCategory", new { id = medium.Id}, new {@class="delete-medium-link"})
+               </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

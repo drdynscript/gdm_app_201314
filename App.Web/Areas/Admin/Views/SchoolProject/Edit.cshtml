@@ -1,0 +1,97 @@
+﻿@model App.Web.Areas.Admin.Models.SchoolProjectEditViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section Head {
+    @Styles.Render("~/content/chosen")
+}
+
+<div class="row">
+    <section class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create a new SchoolProject
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>SchoolProject</legend>
+
+                        @Html.HiddenFor(model => model.SchoolProject.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.Title)
+                            @Html.TextBoxFor(model => model.SchoolProject.Title, new { @class = "form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.SchoolProject.Title)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.Description)
+                            @Html.TextAreaFor(model => model.SchoolProject.Description, new { @class = "form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.SchoolProject.Description)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.Body)
+                            @Html.TextAreaFor(model => model.SchoolProject.Body, new { rows = 30, cols = 100, @class="ckeditor form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.SchoolProject.Body)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.UserId)
+                            @Html.EditorFor(model => model.SchoolProject.UserId)
+                            @Html.ValidationMessageFor(model => model.SchoolProject.UserId)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.StartDate)
+                            @Html.TextBoxFor(model => model.SchoolProject.StartDate, new { @class = "form-control", placeholder="Enter the startdate", @Value = Model.SchoolProject.StartDate.ToString("yyyy/MM/dd HH:mm:ss")})
+                            @Html.ValidationMessageFor(model => model.SchoolProject.StartDate)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.EndDate)
+                            @Html.TextBoxFor(model => model.SchoolProject.EndDate, new { @class = "form-control", placeholder="Enter the enddate", @Value = Model.SchoolProject.EndDate.ToString("yyyy/MM/dd HH:mm:ss")})
+                            @Html.ValidationMessageFor(model => model.SchoolProject.EndDate)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SchoolProject.LevelOfDifficultyId)
+                            @Html.DropDownListFor(model => model.SchoolProject.LevelOfDifficultyId, Model.LevelsOfDifficulty, new { @class = "chzn-select form-control", placeholder="Choose one or more categories..."})
+                        </div>
+
+                        <div class="form-group">
+                            @Html.ListBoxFor(model => model.SelectedCategoriesIds, Model.Categories, new { multiple = "multiple", @class = "chzn-select form-control", placeholder="Choose one or more categories..."})
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </fieldset>
+                }
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-12 col-md-8 col-lg-8"> 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Actions
+            </div>
+            <div id="role-list" class="panel-body">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>  
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/chosen")
+    @Scripts.Render("~/bundles/ckeditor")
+    @Scripts.Render("~/scripts/admin/schoolproject.js")
+    <script>(function () { $(".chzn-select").chosen(); $('#SchoolProject_StartDate').datepicker({ dateFormat: 'yy/mm/dd' }); $('#SchoolProject_EndDate').datepicker({ dateFormat: 'yy/mm/dd' }); })();</script>
+}

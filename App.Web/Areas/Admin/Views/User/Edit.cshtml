@@ -1,0 +1,107 @@
+﻿@model App.Web.Areas.Admin.Models.MemberEditViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section Head {
+    @Styles.Render("~/content/chosen")
+}
+
+<div class="row">
+    <section class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create a new Member
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>User information</legend>
+
+                        @Html.HiddenFor(model => model.Member.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.UserName)
+                            @Html.TextBoxFor(model => model.Member.UserName, new { @class = "form-control", placeholder = "Enter the username of the new Member" })
+                            @Html.ValidationMessageFor(model => model.Member.UserName)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.Email)
+                            @Html.TextBoxFor(model => model.Member.Email, new { @class = "form-control", placeholder = "Enter the email of the new Member" })
+                            @Html.ValidationMessageFor(model => model.Member.Email)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.Password)
+                            @Html.PasswordFor(model => model.Member.Password, new { @class = "form-control", placeholder = "Enter the password of the new Member" })
+                            @Html.ValidationMessageFor(model => model.Member.Password)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.ConfirmPassword)
+                            @Html.PasswordFor(model => model.Member.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm the password" })
+                            @Html.ValidationMessageFor(model => model.Member.ConfirmPassword)
+                        </div>
+
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Personal information</legend>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.Person.FirstName)
+                            @Html.TextBoxFor(model => model.Member.Person.FirstName, new { @class = "form-control", placeholder = "Enter the firstname of the new Member" })
+                            @Html.ValidationMessageFor(model => model.Member.Person.FirstName)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Member.Person.SurName)
+                            @Html.TextBoxFor(model => model.Member.Person.SurName, new { @class = "form-control", placeholder = "Enter the surname of the new Member" })
+                            @Html.ValidationMessageFor(model => model.Member.Person.SurName)
+                        </div>
+
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Roles</legend>
+
+                        <div class="form-group">
+                            @Html.ListBoxFor(model => model.SelectedRolesIds, Model.Roles, new { multiple = "multiple", @class = "chzn-select form-control", placeholder = "Choose one or more roles..." })
+                        </div>
+
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Actions</legend>
+
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </fieldset>
+                }
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-12 col-md-8 col-lg-8"> 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Actions
+            </div>
+            <div id="role-list" class="panel-body">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>  
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/chosen")
+    @Scripts.Render("~/scripts/admin/user.js")
+    <script>(function () { $(".chzn-select").chosen(); })();</script>
+}

@@ -1,0 +1,22 @@
+﻿@model App.Web.Models.NewsletterSubscriptionModelUser
+
+<div id="status-newsletter"></div>
+@using (Ajax.BeginForm("SubscribeNewsletterUser", "About", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "newsletterform",
+    OnFailure = "ShowNewsletterFormError()",
+    OnSuccess = "ShowNewsletterFormSuccess()",
+    OnBegin = "ShowNewsletterFormPreloader()",
+    OnComplete = "HideNewsletterFormPreloader()"
+}, new { id = "newsletterform" }))
+{     
+    <fieldset>
+        <legend>Klik op de onderstaande knop om zich in te schrijven voor de nieuwsbrief</legend>
+ 
+        @Html.HiddenFor(model => model.UserId)
+ 
+        <input type="submit" class="btn btn-primary" value="Inschrijven nieuwsbrief">
+    </fieldset>
+}

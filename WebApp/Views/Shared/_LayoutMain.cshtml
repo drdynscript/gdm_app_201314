@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<!-- [if lt IE 7]><html dir="ltr" lang="nl-be" class="no-js lt-ie7"><![endif]-->
+<!-- [if lt IE 8]><html dir="ltr" lang="nl-be" class="no-js lt-ie8"><![endif]-->
+<!-- [if lt IE 9]><html dir="ltr" lang="nl-be" class="no-js lt-ie9"><![endif]-->
+<!-- [if lt IE 10]><html dir="ltr" lang="nl-be" class="no-js lt-ie10"><![endif]-->
+<!-- [if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="nl-be" class="no-js" ><!--<![endif]-->
+<head>
+    @* CHARACTER ENCODING *@
+    <meta charset="utf-8">
+    @* LATEST VERSION OF RENDERING ENGINE *@
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    @* MOST IMPORTANT SEO FRIENDLY TAG *@
+    <title>GDM | @ViewBag.Title</title>
+    @* OTHER IMPORTANT SEO TAGS *@
+	<meta name="description" content="@ViewBag.Description">
+	<meta name="keywords" content="@ViewBag.Keywords">
+	<meta name="author" content="Arteveldehogeschool | Bachelor in de Grafische en Digitale Media" />
+	<meta name="copyright" content="Copyright 2010-13 Arteveldehogeschool. All rights reserved.">    
+    @* HUMANS = AUTHORS TEXT FILE *@
+	<link type="text/plain" rel="author" href="humans.txt">
+    @* HUMANS = AUTHORS TEXT FILE *@
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    @* MOBILE VIEWPORT = DEVICE WIDTH *@
+	<meta name="viewport" content="width=device-width">
+    @* FOUNDATION CSS *@
+    @Styles.Render("~/Content/bootstrap")
+    @* FOUNDATION CSS *@
+    @Styles.Render("~/Content/css")
+    @* RENDER EXTRA PAGE RELATED CSS AND JS *@
+    @RenderSection("head", required: false)
+    @* MODERNIZR *@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @* RENDER HEADER *@
+    @Html.Partial("_HeaderMain")
+    @* RENDER BODY *@
+    @RenderBody()
+    @* RENDER POSTCONTENT *@
+    @Html.Partial("_PostContentMain")
+    @* RENDER FOOTER *@
+    @Html.Partial("_FooterMain")
+
+    @* TO TOP *@
+    <a class="totop">
+        <i class="icon-chevron-up"></i>
+    </a>
+
+    @* SCRIPTS AT THE BOTTOM *@
+    @* RENDER JQUERY JS *@
+    @Scripts.Render("~/bundles/jquery")
+    @* RENDER BOOTSTRAP JS *@
+    @Scripts.Render("~/bundles/bootstrap")
+    @* RENDER EXTRA PAGE RELATED JS *@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

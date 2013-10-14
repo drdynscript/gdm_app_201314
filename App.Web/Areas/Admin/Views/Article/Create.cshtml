@@ -1,0 +1,78 @@
+﻿@model App.Web.Areas.Admin.Models.ArticleEditViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section Head {
+    @Styles.Render("~/content/chosen")
+}
+
+<div class="row">
+    <section class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create a new Article
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>Article</legend>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Article.Title)
+                            @Html.TextBoxFor(model => model.Article.Title, new { @class = "form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.Article.Title)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Article.Description)
+                            @Html.TextAreaFor(model => model.Article.Description, new { @class = "form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.Article.Description)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Article.Body)
+                            @Html.TextAreaFor(model => model.Article.Body, new { rows = 30, cols = 100, @class="ckeditor form-control", placeholder="Enter the name of the new Role"})
+                            @Html.ValidationMessageFor(model => model.Article.Body)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Article.UserId)
+                            @Html.EditorFor(model => model.Article.UserId)
+                            @Html.ValidationMessageFor(model => model.Article.UserId)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.ListBoxFor(model => model.SelectedCategoriesIds, Model.Categories, new { multiple = "multiple", @class = "chzn-select form-control", placeholder="Choose one or more categories..."})
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Create</button>
+                    </fieldset>
+                }
+            </div>
+        </div>        
+    </section>
+    <section class="col-xs-12 col-sm-12 col-md-8 col-lg-8"> 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Actions
+            </div>
+            <div id="role-list" class="panel-body">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>  
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/chosen")
+    @Scripts.Render("~/bundles/ckeditor")
+    @Scripts.Render("~/scripts/admin/article.js")
+    <script>(function () { $(".chzn-select").chosen(); })();</script>
+}

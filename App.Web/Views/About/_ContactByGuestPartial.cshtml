@@ -1,0 +1,32 @@
+﻿@model App.Web.Models.ContactModelGuest
+
+<div id="status-contactform"></div>
+@using (Ajax.BeginForm("SendMail", "About", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "contactform",
+    OnFailure = "ShowContactFormError()",
+    OnSuccess = "ShowContactFormSuccess()", 
+    OnBegin="ShowContactFormPreloader()", 
+    OnComplete="HideContactFormPreloader()"
+}, new {id="contactform" }))
+{     
+    <fieldset>
+        <legend>Vul het onderstaande formulier in zodat we u kunnen contacteren</legend>
+ 
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name) @Html.ValidationMessageFor(model => model.Name)
+ 
+        @Html.LabelFor(model => model.Email)
+        @Html.EditorFor(model => model.Email) @Html.ValidationMessageFor(model => model.Email)
+ 
+        @Html.LabelFor(model => model.Subject)
+        @Html.EditorFor(model => model.Subject) @Html.ValidationMessageFor(model => model.Subject)
+ 
+        @Html.LabelFor(model => model.Body)
+        @Html.TextAreaFor(model => model.Body) @Html.ValidationMessageFor(model => model.Body)<br />
+ 
+        <input type="submit" class="btn btn-primary" value="Verzend bericht">
+    </fieldset>
+}

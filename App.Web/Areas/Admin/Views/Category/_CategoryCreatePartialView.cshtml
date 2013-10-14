@@ -1,0 +1,31 @@
+﻿@model WebApp.Areas.Backoffice.Models.CategoryCreateViewModel
+
+@using (Ajax.BeginForm("AjaxCreateCategory", "Category", new { area = "Admin" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId="category-list", OnSuccess="CategoryCreateSuccess"}, new {id="category-create"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Category</legend>
+
+        @Html.HiddenFor(model => model.Category.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category.Name)
+            @Html.TextBoxFor(model => model.Category.Name, new { @class = "form-control", placeholder="Enter the name of the new Category"})
+            @Html.ValidationMessageFor(model => model.Category.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category.Description)
+            @Html.TextAreaFor(model => model.Category.Description, new { @class = "form-control", placeholder="Enter the description of the new Category"})
+            @Html.ValidationMessageFor(model => model.Category.Description)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category.ParentCategory)
+            @Html.DropDownListFor(x => x.Category.ParentId, new SelectList(Model.Categories, "Id", "Name"), "-- Select Parent Category --", new { @class = "form-control"})
+        </div>
+        <button type="submit" class="btn btn-default">Save</button>
+    </fieldset>
+}

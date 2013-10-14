@@ -1,0 +1,50 @@
+﻿@model global::Models.Medium
+
+<picture>
+   <source media="(min-width: 45em)" src="@Model.Url">
+   <source media="(min-width: 18em)" src="@Model.Url">
+   <source src="@Model.Url">
+   <img src="~/@Model.Url" alt="">
+</picture>
+
+@using (Ajax.BeginForm("AjaxCreateMedium", "Media", null, new AjaxOptions { HttpMethod = "POST" }, new { role = "form", id = "form" + Guid.NewGuid() }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Media</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "hidden" })
+            @Html.TextBoxFor(model => model.Title, new {@class="form-control", placeholder="Title for the medium"})
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "hidden" })
+            @Html.TextAreaFor(model => model.Description, new {@class="form-control", placeholder="Description for the medium"})
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CanBeVisitByGuests)
+            @Html.CheckBoxFor(model => model.CanBeVisitByGuests, new {@class="form-control"})
+            @Html.ValidationMessageFor(model => model.CanBeVisitByGuests)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId)
+            @Html.EditorFor(model => model.UserId)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+        @Html.HiddenFor(model => model.MimeType)
+        @Html.HiddenFor(model => model.MediumType)
+        @Html.HiddenFor(model => model.IsExternal)
+        @Html.HiddenFor(model => model.Url)
+        <p>
+            <input type="submit" value="Create" class="btn btn-primary" />
+            @Ajax.ActionLink("Delete", "AjaxDeleteFile", new{fileUrl = Model.Url}, new AjaxOptions{HttpMethod = "POST"}, new { @class = "btn btn-default" })
+        </p>
+    </fieldset>
+}

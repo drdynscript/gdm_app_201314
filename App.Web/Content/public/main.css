@@ -1,0 +1,160 @@
+﻿body
+{
+    background:url('../images/noise-f1.gif');
+    color:#444444;
+}
+@media (max-width: 767px)
+{
+    .wrapper
+    {
+        margin:0 -20px;
+    }
+    .wrapper .container
+    {
+        padding:0 20px;
+    }
+    #main-navigation
+    {
+        margin-right:-20px;
+        margin-left:-20px;
+    }
+    #main-navigation .navbar-inner
+    {
+        padding-top:8px !important;
+        padding-bottom:8px !important;
+    }
+}
+.panel
+{
+    background: #fff;
+    box-sizing:border-box;
+    padding:20px;
+    margin:0 0 20px;
+    border-radius:4px;
+    border: solid 1px #ebebeb;
+    
+}
+#header-wrapper
+{
+    position:relative;
+    z-index:2000;
+    border-bottom: 1px solid #fafafa;
+    background: #222 url(../img/fbg.jpg);
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.15), 0px 2px 1px rgba(0,0,0,.10), 0px 3px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0px 1px 1px rgba(0,0,0,.15), 0px 2px 1px rgba(0,0,0,.10), 0px 3px 1px rgba(0,0,0,.05);
+    box-shadow: 0px 1px 1px rgba(0,0,0,.15), 0px 2px 1px rgba(0,0,0,.10), 0px 3px 1px rgba(0,0,0,.05);
+}
+#header-logo h1 a
+{
+    text-indent:-999em;
+    display:block;
+    width:80px;
+    height:48px;
+    background:url('./images/ahslogo.png') no-repeat center center;
+    background-size:cover;
+    margin-top:20px;
+}
+#header-logo h1 a:hover
+{
+    background:url('./images/ahslogo-hover.png') no-repeat center center;
+}
+#header-logo h2
+{
+    display:none;
+}
+#postcontent-wrapper
+{
+    background: #222 url(../img/fbg.jpg);
+    padding: 20px 0;
+    text-shadow: 0px -1px 0px #000;
+    -webkit-box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    -moz-box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    color:#b0b0b0;
+}
+#content h1
+{
+    color:#98bf21;
+}
+#postcontent a
+{
+    color:#eee;
+}
+#postcontent a:hover
+{
+    color:#ff6666;
+    text-decoration:none;
+    border-bottom:1px dotted #ff6666;
+}
+.address ul
+{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.address li
+{
+    line-height:30px;
+}
+.address ul li i
+{
+    display:inline-block;
+    width:20px;
+    margin-right:10px;
+    color:#ff6666;
+    text-align: center;
+}
+#footer-wrapper
+{
+    padding:20px 0;
+    background: #222 url(../img/fbg.jpg);
+    color: #b0b0b0;
+    -webkit-box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    -moz-box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    box-shadow: 0 0px 0 5px rgba(0,0,0,.1), 0px 1px 1px rgba(0,0,0,.35);
+    opacity: .95;
+    filter: alpha(opacity=95);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+}
+#footer-wrapper a
+{
+    color:#eee;
+    text-decoration:none;
+    border-bottom:1px dotted #b0b0b0;
+}
+#footer-wrapper a:hover
+{
+    color:#fff;
+    text-decoration:none;
+    border-bottom-color:#eee;
+}
+#footer-nav ul
+{
+    list-style:none;
+}
+#footer-nav ul li
+{
+    float:left;
+    margin-right:12px;
+}
+#footer-nav ul li:last-of-type
+{
+    margin-right:0;
+}
+.socialmedia ul
+{
+    list-style:none;
+    margin:0;
+}
+.socialmedia ul li
+{
+}
+.socialmedia ul li a, .socialmedia ul li a:hover
+{
+    border-bottom:none !important;
+}
+.timeline-header,
+.timeline-footer
+{
+    display:none !important;
+}

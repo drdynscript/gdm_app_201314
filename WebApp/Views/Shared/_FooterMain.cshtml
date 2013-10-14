@@ -1,0 +1,19 @@
+﻿@using WebApp.Helpers;
+
+<div class="wrapper" id="footer-wrapper">
+    <div class="container">
+        <footer class="row-fluid" id="footer">
+            <section class="span6">
+                &copy; Copyright 2012-13 <a href="http://www.arteveldehs.be/emc.asp?pageId=1940" title="Bachelor in de grafische en digitale media">Bachelor in de grafische en digitale media</a>.<br />
+                Designed &amp; developped by <a href="http://www.drdynscript.eu" title="Dr Dynscript's website">Philippe De Pauw</a>
+            </section>
+            <nav id="footer-nav" class="span6 pull-right">
+                <ul class="pull-right">
+                    @Html.MenuItem("Over ons", "About", "Home")
+                    @Html.MenuItem("Contact", "Contact", "About")
+                    @Html.MenuItem("Copyright & Privacy", "Disclaimer", "About")
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</div>

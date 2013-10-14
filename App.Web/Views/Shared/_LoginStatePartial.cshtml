@@ -1,0 +1,39 @@
+﻿@if (Request.IsAuthenticated) {
+    <ul class="nav nav-pills">
+        <li class="me dropdown">
+            <a class="dropdown-toggle js-dropdown-toggle" data-toggle="dropdown" href="#">
+                <img class="avatar" src="https://si0.twimg.com/profile_images/378800000077166338/050af30836d5b75bc06f7d350b1c039f_normal.png" alt="Philippe De Pauw" data-user-id="38301993">Account
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>@using (Html.BeginForm("Manage", "Account", FormMethod.Post, new { id = "manageForm" }))
+                {
+                @Html.AntiForgeryToken()
+                <a href="javascript:document.getElementById('manageForm').submit()" title="Beheer @User.Identity.Name">
+                    @User.Identity.Name
+                </a>
+              }</li>
+              <li class="dropdown-divider"></li>
+              <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+              }</li>
+            </ul>
+        </li>
+    </ul>
+} else {
+    <ul class="nav nav-pills">
+        <li class="me dropdown">
+            <a class="dropdown-toggle js-dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="icon-user icon-large"></i>
+                Login
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li class="dropdown-divider"></li>
+                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+        </li>
+    </ul>
+}

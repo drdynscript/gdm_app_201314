@@ -1,0 +1,39 @@
+﻿@model WebApp.Areas.Backoffice.Models.CategoryCreateViewModel
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Category</legend>
+
+        @Html.HiddenFor(model => model.Category.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Category.Name)
+            @Html.ValidationMessageFor(model => model.Category.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Category.Description)
+            @Html.ValidationMessageFor(model => model.Category.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category.ParentCategory)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x => x.Category.ParentId , new SelectList(Model.Categories, "Id", "Name"), "-- Select Parent Category --")
+        </div>
+        
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}

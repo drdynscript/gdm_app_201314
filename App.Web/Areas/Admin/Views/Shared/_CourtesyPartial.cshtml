@@ -1,0 +1,19 @@
+﻿<ul id="courtesy-navigation" class="nav nav-pills navbar-right">
+    <li><a href="#">Link</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="avatar" src="https://si0.twimg.com/profile_images/378800000077166338/050af30836d5b75bc06f7d350b1c039f_normal.png" alt="Philippe De Pauw" data-user-id="38301993" width="32">Account <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>@using (Html.BeginForm("Manage", "Account", FormMethod.Post, new { id = "manageForm" }))
+                {
+                @Html.AntiForgeryToken()
+                <a href="javascript:document.getElementById('manageForm').submit()" title="Beheer @User.Identity.Name">
+                    @User.Identity.Name
+                </a>
+              }</li>
+            <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+              }</li>
+        </ul>
+    </li>
+</ul>

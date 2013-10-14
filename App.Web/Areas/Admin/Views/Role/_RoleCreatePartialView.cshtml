@@ -1,0 +1,25 @@
+﻿@model Models.Role
+
+@using (Ajax.BeginForm("AjaxCreateRole", "Role", new { area = "Admin" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId="role-list", OnSuccess="RoleCreateSuccess"}, new {id="role-create"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Role</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Enter the name of the new Role"})
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="form-group">
+             @Html.LabelFor(model => model.Description)
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder="Enter the description of the new Role"})
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <button type="submit" class="btn btn-default">Save</button>
+    </fieldset>
+}

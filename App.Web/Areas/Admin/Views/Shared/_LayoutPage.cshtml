@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @* CHARACTER ENCODING *@
+    <meta charset="utf-8">
+    @* LATEST VERSION OF RENDERING ENGINE *@
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    @* MOST IMPORTANT SEO FRIENDLY TAG *@
+    <title>GDM | @ViewBag.Title</title>
+    @* OTHER IMPORTANT SEO TAGS *@
+	<meta name="description" content="@ViewBag.Description">
+	<meta name="keywords" content="@ViewBag.Keywords">
+	<meta name="author" content="Arteveldehogeschool | Bachelor in de Grafische en Digitale Media">
+	<meta name="copyright" content="Copyright 2010-13 Arteveldehogeschool. All rights reserved.">    
+    @* HUMANS = AUTHORS TEXT FILE *@
+	<link type="text/plain" rel="author" href="~/humans.txt">
+    @* FAVICON AND TOUCHICONS *@
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/ico/apple-touch-icon-57-precomposed.png">
+    <link href="~/Content/ico/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    @* MOBILE VIEWPORT = DEVICE WIDTH *@
+	<meta name="viewport" content="width=device-width">
+    @* BOOTSTRAP LESS CSS *@
+    @Styles.Render("~/Content/bootstrap")
+    @* JQUERY UI *@
+     @Styles.Render("~/Content/themes/base/css")
+    @* CUSTOM CSS *@
+    @Styles.Render("~/Content/adminpage")
+    @* RENDER EXTRA PAGE RELATED CSS AND JS *@
+    @RenderSection("head", required: false)
+    @* MODERNIZR *@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @* HEADER PARTIAL VIEW *@
+    @Html.Partial("_HeaderPartial")    
+    <div id="main-container" class="container-wrapper">
+        <div id="main" class="row">
+            <aside id="sidebar" class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                <div id="main-navigation" class="collapse navbar-collapse">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a href="~/Admin/">
+							    <i class="icon-dashboard"></i>
+							    <span class="menu-text">Dashboard</span>							
+						    </a>
+                        </li>
+                        <li class="open">
+						    <a href="#" class="dropdown-toggle">
+							    <i class="icon-list"></i>
+							    <span class="menu-text">Articles</span>
+							    <b class="arrow icon-angle-down"></b>
+						    </a>
+						    <ul class="submenu" style="display: block;">
+							    <li>
+								    <a href="~/Admin/Article">
+									    <i class="icon-double-angle-right"></i>
+									    <span class="menu-text">All articles</span>
+								    </a>
+							    </li>
+							    <li>
+								    <a href="~/Admin/Article/Create">
+									    <i class="icon-double-angle-right"></i>
+									    <span class="menu-text">New article</span>
+								    </a>
+							    </li>
+						    </ul>
+					    </li>
+                        <li>
+                            <a href="~/Admin/Category">
+							    <i class="icon-tags"></i>
+							    <span class="menu-text">Categories</span>							
+						    </a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/Role">
+							    <i class="icon-tags"></i>
+							    <span class="menu-text">Roles</span>							
+						    </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div id="main-content" class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ol class="breadcrumb">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">Library</a></li>
+                          <li class="active">Data</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="info-message" class="alert alert-danger">
+                        </div>
+                    </div>
+                </div>
+                @* CONTENT *@
+                @RenderBody()
+            </div>
+        </div>        
+    </div>    
+    @* RENDER JQUERY JS *@
+    @Scripts.Render("~/bundles/jquery")
+    @* RENDER JQUERY UI *@
+    @Scripts.Render("~/bundles/jqueryui")
+    @* RENDER BOOTSTRAP JS *@
+    @Scripts.Render("~/bundles/bootstrap")
+    @* RENDER GLOBAL ADMIN SCRIPT *@
+    @Scripts.Render("~/Scripts/admin/page.js")
+    @* RENDER EXTRA PAGE RELATED JS *@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿body {
+    background:#1d2024;
+}
+.login-container
+{
+    width:352px;
+    margin:0 auto;
+}
+.login-box
+{
+    padding: 8px 16px;
+    background: #f7f7f7;
+}
+.form-login fieldset legend
+{
+    display:none;
+}
+.field-validation-error
+{
+    display:block;
+    color: #b94a48;
+    background-color: #f2dede;
+    border: 1px #eed3d7 solid ;
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}

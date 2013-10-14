@@ -1,0 +1,14 @@
+﻿@model Models.Article
+
+<article class="article-large">
+    <header>
+        <h2>@Model.Title</h2>
+    </header>
+    <section class="description">
+        @Model.Description
+    </section>
+    <section class="body">
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Body))
+    </section>
+</article>
+

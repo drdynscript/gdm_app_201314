@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+@section head{
+    @Styles.Render("~/Content/leaflet")
+    @Styles.Render("~/Content/public/contact.css")
+}
+<div class="row-fluid">
+    <h1 class="span12">@ViewBag.Title</h1>
+</div>
+<div class="row-fluid">
+    <section class="span6">
+        <h2>Algemene contactinformatie</h2>
+        <section class="vcard">
+            <a class="url fn org" href="http://www.arteveldehs.be/emc.asp?pageId=1940">
+                <span class="organization-name">Arteveldehogeschool</span> - <span class="organization-unit">Bachelor in de grafische en digitale media</span>
+            </a>
+            <div class="adr">
+                <span class="street-address">Industrieweg 232</span><br />
+                <span class="postal-code">9030</span>
+                <span class="locality">Mariakerke</span><br />
+                <span class="region">Oost-Vlaanderen</span>, 
+                <span class="country-name">België</span>
+            </div>
+            <div class="geo">
+                <abbr class="latitude" title="3.669174">3&deg;40&#39;9.03&quot;S</abbr>, 
+                <abbr class="longitude" title="51.087243">51&deg;5&#39;14.07&quot;O</abbr>        
+            </div>
+            <a rel="me" class="email" href="mailto:info.grafische.digitalemedia@arteveldehs.be">info.grafische.digitalemedia@arteveldehs.be</a>
+            <a rel="me" class="url" href="http://www.arteveldehs.be/emc.asp?pageId=1940"http://www.arteveldehs.be/emc.asp?pageId=1940</a><br />
+            <a rel="me" class="url" href="http://twitter.com/bachelorGDM">Twitter</a><br />
+            <a rel="me" class="url" href="http://flickr.com/tantek">Facebook</a>
+            <div class="tel">
+              <span class="type">work</span>:
+              <span class="value">+32 09 234 86 00</span>
+            </div>
+            <div class="tel">
+              <span class="type">gsm</span>:
+              <span class="value">+1-800-555-1855</span>
+            </div>
+        </section>
+    </section>
+    <section class="span6">
+        <div id="map-contact-container">
+             <div id="map-contact"></div>
+        </div>
+    </section>
+</div>
+<div class="row-fluid">
+    <section class="span6">
+        <h2>Contacteer ons</h2>
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Partial("_ContactByUserPartial", new App.Web.Models.ContactModelUser());
+        }
+        else
+        {
+            @Html.Partial("_ContactByGuestPartial", new App.Web.Models.ContactModelGuest());
+        }
+    </section>
+    <section class="span6">
+        <h2>Nieuwsbrief</h2>
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Partial("_NewsletterSubscriptionByUserPartial", new App.Web.Models.NewsletterSubscriptionModelUser { UserId = (int)(Membership.GetUser(User.Identity.Name).ProviderUserKey) });
+        }
+        else
+        {
+            @Html.Partial("_NewsletterSubscriptionByGuestPartial", new App.Web.Models.NewsletterSubscriptionModelGuest());
+        }
+    </section>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/leaflet")
+    @Scripts.Render("~/Scripts/contact.js")
+}
